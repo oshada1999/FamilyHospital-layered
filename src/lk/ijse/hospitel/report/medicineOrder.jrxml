@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="medicineOrder" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="404ac572-964d-4025-a90a-327f263305ef">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="familyHospital"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM orders INNER JOIN orderdetail  ON orders.OrderID=orderdetail.OrderID WHERE orders.OrderID=(select orders.OrderID from orders ORDER by orders.OrderID DESC LIMIT 1)]]>
+	</queryString>
+	<field name="OrderID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OrderID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrderID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="patientId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="patientId"/>
+		<property name="com.jaspersoft.studio.field.label" value="patientId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="MediCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MediCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="MediCode"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="type"/>
+		<property name="com.jaspersoft.studio.field.label" value="type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="dose" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dose"/>
+		<property name="com.jaspersoft.studio.field.label" value="dose"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="OrderQTY" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="OrderQTY"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrderQTY"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<field name="UnitPrice" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="UnitPrice"/>
+		<property name="com.jaspersoft.studio.field.label" value="UnitPrice"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orderdetail"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="113" splitType="Stretch">
+			<staticText>
+				<reportElement x="-11" y="-12" width="586" height="30" uuid="e8359e38-fdba-4ce6-9f73-33deb5abb9fe"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[------------------------------FAMILY HOSPITAL------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="219" y="18" width="117" height="21" uuid="32a11e19-7aaf-41ad-af3f-d8cb7aefce72"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[--Order Receipt--]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="84" width="79" height="18" uuid="93928552-61e6-4c10-8167-89bdf07023b9"/>
+				<text><![CDATA[011-4335647]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="100" height="30" uuid="add98bca-37f4-4b7d-bb45-d9e261da8672"/>
+				<text><![CDATA[Galle Road.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="100" height="20" uuid="54b5d831-35a6-4ca4-998b-e5b1a322ca34"/>
+				<text><![CDATA[Colombo 02,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="100" height="15" uuid="34b54de3-92b1-4651-a455-6e4915fe5001"/>
+				<text><![CDATA[Family Hospital,]]></text>
+			</staticText>
+			<textField pattern="HH:mm">
+				<reportElement x="461" y="57" width="100" height="18" uuid="25af2eb4-48f7-49e1-b5aa-96ec1ecbeea8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="462" y="35" width="100" height="13" uuid="27a5a825-49c0-44ad-ba3f-7b67bde3284e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="458" y="75" width="52" height="15" uuid="911dc6a9-d594-4068-a1d2-0f3080d5cc89"/>
+				<text><![CDATA[Order ID :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="505" y="75" width="61" height="18" uuid="ac9f7098-f10f-4e98-948d-922fd88a4478"/>
+				<textFieldExpression><![CDATA[$F{OrderID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement x="9" y="6" width="540" height="1" uuid="147e0d2e-88d0-411d-b63b-825403297627"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="94" y="-26" width="143" height="26" uuid="74c5151d-22dd-42e5-be22-9ec4cd6c604d"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="-26" width="93" height="26" uuid="71b3d18a-ddcc-437e-8648-072a0027751d"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Patient ID :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-5" y="1" width="100" height="30" uuid="51d7df2e-a26e-4eca-987d-5384ad4dea4e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b1b6a72-a8ab-4dee-9f62-6ea3b5a5c6e2"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MediCode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="1" width="100" height="30" uuid="2316bf57-e2b9-4af9-b2e4-8fa5c50b05e2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="794b3821-1d14-44e3-afd9-e7eb2af4a626"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="195" y="1" width="100" height="30" uuid="1599d6a0-84cf-486f-baaa-92a29d9b2088">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c9333eef-bd12-45ec-b566-3aafd7ccd1ce"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="1" width="100" height="30" uuid="a9bcf741-3c17-478f-8649-efca8f2f86ac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4bb8c951-bd69-42ac-adc3-6251ab1c20c4"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[dose]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="1" width="100" height="30" uuid="a66d421f-04c0-4f72-b9b4-998c319a1d29">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c4218a35-6594-4fe7-8fab-f8bc3ead4ecb"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OrderQTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="495" y="1" width="100" height="30" uuid="9353788b-4cdd-46c6-9e6b-0fab282e7001">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="daf0fd87-b03f-4266-b891-ba5e72045b3f"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[UnitPrice]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="-5" y="1" width="100" height="30" uuid="5de77808-3b78-4207-9a10-6030b2c4e625">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b1b6a72-a8ab-4dee-9f62-6ea3b5a5c6e2"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{MediCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="1" width="100" height="30" uuid="201ef880-6a88-44de-8a9f-e8cdcaff42b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="794b3821-1d14-44e3-afd9-e7eb2af4a626"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="1" width="100" height="30" uuid="cc50b7ef-8cda-4712-bfe5-65641b319377">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c9333eef-bd12-45ec-b566-3aafd7ccd1ce"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="0" width="100" height="30" uuid="01a566c4-d567-42a1-beae-4467db355a70">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4bb8c951-bd69-42ac-adc3-6251ab1c20c4"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{dose}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="100" height="30" uuid="17796968-5471-46ad-b2d6-19649c0cc657">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c4218a35-6594-4fe7-8fab-f8bc3ead4ecb"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{OrderQTY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="495" y="1" width="100" height="30" uuid="0b72e7dc-3bc5-479d-8119-ffb260172e7e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="daf0fd87-b03f-4266-b891-ba5e72045b3f"/>
+				</reportElement>
+				<box>
+					<pen lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{UnitPrice}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

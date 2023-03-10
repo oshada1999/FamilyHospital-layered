@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="chooseContext" prefHeight="836.0" prefWidth="1297.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hospitel.controller.ChoseAppointmentFormController">
+   <children>
+      <Label layoutX="80.0" layoutY="14.0" text="Choose Appointment">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="46.0" fitWidth="52.0" layoutX="13.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/icons8-appointment-68.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearch" layoutX="1047.0" layoutY="93.0" promptText="Search" />
+      <ImageView fitHeight="31.0" fitWidth="25.0" layoutX="1248.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/search_FILL0_wght400_GRAD0_opsz48.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TableView fx:id="tblAppointment" layoutX="23.0" layoutY="293.0" prefHeight="478.0" prefWidth="1250.0">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="136.00003051757812" text="Appointment Id" />
+            <TableColumn fx:id="colPatientName" prefWidth="134.00003051757812" text="Patient Name" />
+            <TableColumn fx:id="colPatientId" prefWidth="167.0" text="patient ID" />
+            <TableColumn fx:id="colAgep" prefWidth="60.0" text="Age" />
+            <TableColumn fx:id="colpAddress" prefWidth="201.0" text="P.Address" />
+            <TableColumn fx:id="colDName" prefWidth="122.0" text="Doctor Name" />
+            <TableColumn fx:id="colDoctorId" prefWidth="165.0" text="Doctor ID" />
+            <TableColumn fx:id="colDate" prefWidth="157.0" text="Date" />
+            <TableColumn fx:id="colOption" prefWidth="105.0" text="Option" />
+         </columns>
+      </TableView>
+      <Label layoutX="29.0" layoutY="84.0" text="Appointment Id :">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAppointment" layoutX="202.0" layoutY="84.0" prefHeight="30.0" prefWidth="239.0" textFill="#268d7f">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="146.0" text="Patient Name :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="192.0" text="Doctor Name :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPatientName" layoutX="180.0" layoutY="146.0" prefHeight="21.0" prefWidth="132.0" textFill="#0faba7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDoctorName" layoutX="179.0" layoutY="192.0" prefHeight="21.0" prefWidth="103.0" textFill="#0faba7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="349.0" layoutY="146.0" text="Patient ID :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPatientID" layoutX="441.0" layoutY="146.0" prefHeight="21.0" prefWidth="103.0" textFill="#0faba7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="192.0" text="Doctor ID :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDoctorID" layoutX="437.0" layoutY="192.0" prefHeight="21.0" prefWidth="103.0" textFill="#0faba7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="69.0" layoutY="241.0" text="Date         :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="1080.0" layoutY="241.0" onAction="#updateAppointmentOnAction" prefHeight="37.0" prefWidth="172.0" style="-fx-background-color: #3EA2C9; -fx-background-radius: 5;" text="Update Appointment" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="624.0" layoutY="146.0" text="Address :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAddress" layoutX="700.0" layoutY="146.0" prefHeight="21.0" prefWidth="103.0" textFill="#0faba7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtDate" layoutX="160.0" layoutY="229.0" prefHeight="31.0" prefWidth="161.0" />
+      <Label layoutX="836.0" layoutY="146.0" text="Age :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAge" layoutX="882.0" layoutY="146.0" prefHeight="21.0" prefWidth="103.0" textFill="#0faba7">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="1141.0" layoutY="787.0" onAction="#paymentOnAction" prefHeight="38.0" prefWidth="132.0" style="-fx-background-color: #14596D; -fx-background-radius: 10;" text="Payment &gt;" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </JFXButton>
+      <Separator layoutX="1.0" layoutY="58.0" prefHeight="37.0" prefWidth="1296.0" />
+   </children>
+</AnchorPane>

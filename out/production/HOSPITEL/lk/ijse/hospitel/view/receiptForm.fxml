@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="receContext" prefHeight="839.0" prefWidth="1297.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hospitel.controller.PlaceReceiptFormController">
+   <children>
+      <Separator layoutX="2.0" layoutY="60.0" prefHeight="37.0" prefWidth="1295.0" />
+      <ImageView fitHeight="64.0" fitWidth="67.0" layoutX="62.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/icons8-cheque.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="141.0" layoutY="19.0" text="Create Receipt">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="94.0" text="Receipt ID :">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblReceiptId" layoutX="155.0" layoutY="94.0" prefHeight="32.0" prefWidth="225.0" textFill="#1c9460">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="1071.0" layoutY="93.0" text="Date :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="1123.0" layoutY="93.0" prefHeight="27.0" prefWidth="145.0" textFill="#1c9460">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblRecipt" layoutX="26.0" layoutY="323.0" prefHeight="415.0" prefWidth="1242.0">
+        <columns>
+          <TableColumn fx:id="colMediCode" prefWidth="157.00003051757812" text="Medicine Code" />
+          <TableColumn fx:id="colMediName" prefWidth="804.0" text="Medicine Name" />
+            <TableColumn fx:id="ColDose" prefWidth="171.0" text="Dose" />
+            <TableColumn fx:id="ColOption" prefWidth="108.0" text="Option" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="1117.0" layoutY="768.0" onAction="#sendPharmOnAction" style="-fx-background-color: #078084; -fx-background-radius: 20;" text="Print Receipt" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="30.0" layoutY="155.0" text="Patient Name :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPName" layoutX="163.0" layoutY="155.0" prefHeight="27.0" prefWidth="126.0" textFill="#1c9460">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="204.0" text="Doctor Name :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDName" layoutX="162.0" layoutY="204.0" prefHeight="27.0" prefWidth="126.0" textFill="#1c9460">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbMediCode" layoutX="179.0" layoutY="260.0" onAction="#cmbmediOnAction" prefHeight="31.0" prefWidth="210.0" />
+      <Label layoutX="27.0" layoutY="270.0" text="Medicine Code :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="438.0" layoutY="270.0" text="Medicine Name :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMediName" layoutX="590.0" layoutY="270.0" prefHeight="27.0" prefWidth="383.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="990.0" layoutY="269.0" text="Dose :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="1171.0" layoutY="260.0" onAction="#btnAddOnAction" prefHeight="31.0" prefWidth="73.0" style="-fx-background-color: #0C87A9; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="322.0" layoutY="155.0" text="Patinet ID :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPId" layoutX="430.0" layoutY="155.0" prefHeight="27.0" prefWidth="126.0" textFill="#1c9460">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="322.0" layoutY="204.0" text="Doctor ID :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDId" layoutX="429.0" layoutY="204.0" prefHeight="27.0" prefWidth="126.0" textFill="#1c9460">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="37.0" fitWidth="46.0" layoutX="8.0" layoutY="20.0" onMouseClicked="#backPatientOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/icons8-back-arrow-50.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXTextField fx:id="txtDose" layoutX="1055.0" layoutY="260.0" prefHeight="31.0" prefWidth="83.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportPay" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb236958-9dbb-4ef5-af9d-e066de2051ea">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="familyHospital"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM payment INNER JOIN appointment  ON payment.aId=appointment.aId WHERE payment.payId=(select payment.payId from payment ORDER by payment.payId DESC LIMIT 1)]]>
+	</queryString>
+	<field name="payId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="payId"/>
+		<property name="com.jaspersoft.studio.field.label" value="payId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="channelling_cost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="channelling_cost"/>
+		<property name="com.jaspersoft.studio.field.label" value="channelling_cost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="other_cost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="other_cost"/>
+		<property name="com.jaspersoft.studio.field.label" value="other_cost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="pName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="pName"/>
+		<property name="com.jaspersoft.studio.field.label" value="pName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appointment"/>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="age"/>
+		<property name="com.jaspersoft.studio.field.label" value="age"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appointment"/>
+	</field>
+	<field name="pAddress" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="pAddress"/>
+		<property name="com.jaspersoft.studio.field.label" value="pAddress"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appointment"/>
+	</field>
+	<field name="dName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dName"/>
+		<property name="com.jaspersoft.studio.field.label" value="dName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="appointment"/>
+	</field>
+	<variable name="pName1" class="java.lang.Integer" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{pName}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="161" splitType="Stretch">
+			<staticText>
+				<reportElement x="420" y="134" width="82" height="17" uuid="41bdff45-1540-4287-849a-efc6fedb6f27"/>
+				<text><![CDATA[Age                     :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="117" width="82" height="15" uuid="b6735167-4bd3-4227-88d6-b7eb620f0f76"/>
+				<text><![CDATA[Patient Address  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="98" width="82" height="14" uuid="d02f47df-b889-4494-8b73-d37d6073097b"/>
+				<text><![CDATA[Patient Name      :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="100" height="15" uuid="cbeca5a6-d0c5-4ab3-a56f-e07a9811dcaa"/>
+				<text><![CDATA[Family Hospital,]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="462" y="35" width="100" height="13" uuid="39275ce1-a22c-4402-9b85-07ff0a5ff8a4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="59" width="100" height="20" uuid="048ed656-69b0-403c-9cd4-343fa2693d00"/>
+				<text><![CDATA[Colombo 02,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="100" height="30" uuid="2fea2343-99e9-40cc-bc8e-82737220fe53"/>
+				<text><![CDATA[Galle Road.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="502" y="98" width="60" height="14" uuid="25c8d400-1c4c-4c9e-99ff-f1f289571cc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3639ce4f-feb1-4204-859e-10732c68ca15"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{pName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="114" width="70" height="20" uuid="cc368ec1-a041-4b98-aa14-e76d093a63a5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="579e8097-3606-4595-bc90-4c91be82b579"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{pAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="134" width="48" height="15" uuid="a25d31e9-e3a2-436b-89f3-e1707d3865e3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="72ba4d67-e736-4167-8010-6adb3fd0c81c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="461" y="57" width="100" height="18" uuid="864b90c2-3adc-4b0f-bdc3-63d1adb7991c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="112" width="74" height="15" uuid="6d15f602-96cf-4272-827a-c25677ff21c9"/>
+				<text><![CDATA[Doctor Name :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="74" y="112" width="62" height="17" uuid="8e91a1b9-e911-4d1d-9f47-50df19e8e47c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0de34be8-5cef-438b-98d0-0ebf2b07accc"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{dName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="84" width="79" height="18" uuid="77e8de02-6b94-402b-8609-b2f89e45d01e"/>
+				<text><![CDATA[011-4335647]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="-12" width="586" height="30" uuid="d3e26a75-f6df-4197-966b-bb1c7f7fad03"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[------------------------------FAMILY HOSPITAL------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="19" width="159" height="21" uuid="91cc7214-e979-419a-9a5d-4ca9650f2bab"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[--Appointment Receipt--]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="8" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="21" uuid="5786302f-a232-4315-97ce-6ef2b29e00a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c90fcfba-ca18-42a9-941f-05957fff0095"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="138" height="21" uuid="d8b50881-6220-4031-bf3f-e03ec013857f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62a98091-53f9-4ae1-9734-a7a2aa37edf8"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Channelling Cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="138" height="21" uuid="d2b2fcd4-fb41-47f5-a7ee-3f7223c72208">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="853c39a7-bb7c-4972-a29a-8729f8baf6dc"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Other Cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="138" height="21" uuid="7b8e95aa-98e4-4253-8c63-f7660e1c08f9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20763307-0ba2-4acd-acc9-88fa1f6400af"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="141" height="32" uuid="b7c7a63d-f404-4f05-88ad-84368b75da8c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c90fcfba-ca18-42a9-941f-05957fff0095"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{payId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="138" height="32" uuid="40764399-40f1-4f46-ae3c-8ac3d378e51f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="62a98091-53f9-4ae1-9734-a7a2aa37edf8"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{channelling_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="138" height="32" uuid="64a1e19e-5973-4acf-a0f1-bb7ed57dea53">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="853c39a7-bb7c-4972-a29a-8729f8baf6dc"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{other_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="138" height="32" uuid="b0a24ced-79f2-4fb6-a38c-78602e850a7f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20763307-0ba2-4acd-acc9-88fa1f6400af"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

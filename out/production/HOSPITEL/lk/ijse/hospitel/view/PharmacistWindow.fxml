@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hospitel.controller.PharmacistWindowController">
+   <children>
+      <AnchorPane fx:id="pharmacistContext" prefHeight="898.0" prefWidth="1613.0" style="-fx-background-color: white; -fx-background-radius: 100;">
+         <children>
+            <AnchorPane layoutX="-5.0" opacity="0.97" prefHeight="64.0" prefWidth="1644.0" style="-fx-background-color: #496570;">
+               <children>
+                  <Label layoutX="56.0" layoutY="10.0" text="family HEALTH" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="33.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="1572.0" layoutY="13.0" prefHeight="37.0" prefWidth="39.0" style="-fx-background-color: white; -fx-background-radius: 100;" />
+                  <ImageView fitHeight="36.0" fitWidth="30.0" layoutX="1579.0" layoutY="17.0" onMouseClicked="#logoutOnAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/logout_FILL0_wght400_GRAD0_opsz48.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label layoutX="1493.0" layoutY="17.0" text="Log Out" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTime" layoutX="1215.0" layoutY="15.0" prefHeight="37.0" prefWidth="257.0" text="2022-11-13  |  6:35:29" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="63.0" prefHeight="839.0" prefWidth="343.0" style="-fx-background-color: #10384F;">
+               <children>
+                  <Label layoutX="-8.0" prefHeight="64.0" prefWidth="349.0" style="-fx-background-color: #0B292E;" textFill="#eeeeee" />
+                  <ImageView fitHeight="59.0" fitWidth="54.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/Ellipse%201%20(6).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="86.0" layoutY="5.0" text="Pharmacist" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#1fff2d" layoutX="96.0" layoutY="40.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="107.0" layoutY="30.0" text="Online" textFill="WHITE" />
+                  <Label layoutX="-1.0" layoutY="107.0" prefHeight="57.0" prefWidth="343.0" style="-fx-background-color: #226287;" text="            " textFill="#c4e4f1">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="15.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/icons8-dashboard-layout-96%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="-1.0" layoutY="165.0" prefHeight="57.0" prefWidth="343.0" style="-fx-background-color: #226287;" text="            " textFill="#c4e4f1">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fitHeight="34.0" fitWidth="54.0" layoutX="13.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/icons8-supplier-100.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="-1.0" layoutY="70.0" prefHeight="30.0" prefWidth="343.0" text="    MAIN NAVIGATION" textFill="#7c888d">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="47.0" layoutY="107.0" onAction="#dashboardOnAction" prefHeight="57.0" prefWidth="296.0" styleClass="button1" stylesheets="@../asset/css/Style.css" text="Dashboard" textFill="#c4e4f1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="47.0" layoutY="164.0" onAction="#orderOnAction" prefHeight="57.0" prefWidth="296.0" styleClass="button1" stylesheets="@../asset/css/Style.css" text="View Orders" textFill="#c4e4f1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="dashBoardContext" layoutX="342.0" layoutY="63.0" prefHeight="839.0" prefWidth="1297.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="861.0" layoutY="124.0" prefHeight="86.0" prefWidth="68.0" text="5" textFill="WHITE">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="156.0" layoutY="319.0" prefHeight="86.0" prefWidth="68.0" text="3" textFill="WHITE">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="510.0" layoutY="319.0" prefHeight="86.0" prefWidth="68.0" text="14" textFill="WHITE">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="861.0" layoutY="319.0" prefHeight="86.0" prefWidth="68.0" text="2" textFill="WHITE">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="2.0" layoutY="60.0" prefHeight="37.0" prefWidth="1295.0" />
+                  <ImageView fitHeight="64.0" fitWidth="67.0" layoutX="29.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/dashboard%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="108.0" layoutY="19.0" text="Dashboard">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="111.0" layoutY="52.0" text="Welcom back,Pharmacist" />
+                  <Pane layoutX="52.0" layoutY="123.0" prefHeight="200.0" prefWidth="436.0" style="-fx-background-color: #4183AB; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="26.0" layoutY="129.0" text="Total Orders" textFill="WHITE">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="19.0" prefHeight="74.0" prefWidth="103.0" text="14" textFill="WHITE">
+                           <font>
+                              <Font size="51.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="338.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asset/icons8-pharmacist-64.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

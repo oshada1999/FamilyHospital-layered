@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="patientDetails" prefHeight="839.0" prefWidth="1297.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hospitel.controller.PatientPaidDetailsFormController">
+   <children>
+      <Separator layoutX="1.0" layoutY="64.0" prefHeight="37.0" prefWidth="1295.0" />
+      <ImageView fitHeight="64.0" fitWidth="67.0" layoutX="28.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/icons8-contact-details-80.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="107.0" layoutY="18.0" text="Patient Details">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSearch" layoutX="28.0" layoutY="112.0" promptText="Patient Name" />
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="222.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/search_FILL0_wght400_GRAD0_opsz48.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <TableView fx:id="tblPaidPatient" layoutX="24.0" layoutY="161.0" prefHeight="599.0" prefWidth="1246.0">
+         <columns>
+            <TableColumn fx:id="colPatientName" prefWidth="178.0" text="Patient Name" />
+            <TableColumn fx:id="colPatientId" prefWidth="182.0" text="Patient ID" />
+            <TableColumn fx:id="colAge" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="colPatientAddress" prefWidth="196.0" text="P.Address" />
+            <TableColumn fx:id="colDoctorName" minWidth="0.0" prefWidth="187.0" text="Doctor Name" />
+            <TableColumn fx:id="colDoctorId" minWidth="0.0" prefWidth="187.0" text="Doctor ID" />
+            <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="240.0" text="Date" />
+         </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="1129.0" layoutY="782.0" onAction="#ReceiptOnAction" style="-fx-background-color: #0FABA7; -fx-background-radius: 5;" text="Create receipt &gt;" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="836.0" prefWidth="1297.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hospitel.controller.AddMedicineFormController">
+   <children>
+      <TableView fx:id="tblMedicine" layoutX="17.0" layoutY="334.0" prefHeight="486.0" prefWidth="1258.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="133.00003051757812" text="Medicine Code" />
+            <TableColumn fx:id="colName" prefWidth="275.0" text="Name" />
+            <TableColumn fx:id="colType" prefWidth="171.0" text="Type" />
+            <TableColumn fx:id="colDose" prefWidth="216.0" text="Dose" />
+            <TableColumn fx:id="colQty" prefWidth="189.0" text="QtyOnHand" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="168.0" text="UnitPrice" />
+            <TableColumn fx:id="colOption" prefWidth="105.0" text="Option" />
+         </columns>
+      </TableView>
+      <Separator layoutX="1.0" layoutY="56.0" prefHeight="37.0" prefWidth="1296.0" />
+      <Label layoutX="87.0" layoutY="15.0" text="Medicine  Manage">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="46.0" fitWidth="52.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/pills.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtId" layoutX="20.0" layoutY="168.0" prefHeight="31.0" prefWidth="221.0" promptText="Medicine Code">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" layoutX="273.0" layoutY="168.0" prefHeight="31.0" prefWidth="221.0" promptText="Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtDose" layoutX="791.0" layoutY="166.0" prefHeight="31.0" prefWidth="221.0" promptText="Dose">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQty" layoutX="1045.0" layoutY="167.0" prefHeight="31.0" prefWidth="221.0" promptText="QtyOnHand">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtType" layoutX="530.0" layoutY="167.0" prefHeight="31.0" prefWidth="221.0" promptText="Type">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <TextField fx:id="txtSearch" layoutX="24.0" layoutY="116.0" promptText="Search" />
+      <ImageView fitHeight="21.0" fitWidth="22.0" layoutX="227.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/search_FILL0_wght400_GRAD0_opsz48.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXTextField fx:id="txtUnitPrice" layoutX="20.0" layoutY="230.0" prefHeight="31.0" prefWidth="221.0" promptText="UnitPrice">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="951.0" layoutY="287.0" onAction="#addMedicineOnAction" style="-fx-background-color: #138094; -fx-background-radius: 5;" text="+Add new Medicine" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1133.0" layoutY="287.0" onAction="#updateMedicineOnAction" style="-fx-background-color: #3EA2C9; -fx-background-radius: 5;" text="Update Medicine" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

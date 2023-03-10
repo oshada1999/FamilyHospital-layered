@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="signupContext" prefHeight="898.0" prefWidth="1613.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hospitel.controller.SignupWindowFormController">
+   <children>
+      <AnchorPane layoutX="4.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="898.0" prefWidth="1613.0">
+         <children>
+            <ImageView fitHeight="938.0" fitWidth="1633.0" layoutX="-4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/MainWindow%20(2).png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="cmbRole" layoutX="140.0" layoutY="335.0" prefHeight="38.0" prefWidth="264.0" promptText="Role">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+            <JFXTextField fx:id="txtUsername" layoutX="142.0" layoutY="442.0" prefHeight="38.0" prefWidth="264.0" promptText="Contact" />
+            <JFXPasswordField fx:id="txtPassword" layoutX="144.0" layoutY="550.0" prefHeight="38.0" prefWidth="264.0" promptText="Password" />
+            <JFXButton layoutX="203.0" layoutY="671.0" onAction="#signupOnAction" prefHeight="38.0" prefWidth="156.0" style="-fx-background-color: #2FB2D4; -fx-background-radius: 20;" text="Sign up" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="228.0" layoutY="274.0" text="Sign up">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="408.0" layoutY="557.0" text="show">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXPasswordField fx:id="txtPassword1" layoutX="144.0" layoutY="603.0" prefHeight="38.0" prefWidth="264.0" promptText="Comfirm Password" />
+            <JFXButton layoutX="408.0" layoutY="610.0" text="show">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField fx:id="txtUsername1" layoutX="143.0" layoutY="496.0" prefHeight="38.0" prefWidth="264.0" promptText="Username" />
+            <JFXTextField fx:id="txtUsername11" layoutX="141.0" layoutY="388.0" prefHeight="38.0" prefWidth="264.0" promptText="Name" />
+            <AnchorPane layoutX="20.0" layoutY="27.0" prefHeight="31.0" prefWidth="31.0" style="-fx-background-color: white; -fx-background-radius: 100;" />
+            <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="20.0" layoutY="27.0" onMouseClicked="#backOnAcction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/arrow_back_FILL0_wght400_GRAD0_opsz48.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
